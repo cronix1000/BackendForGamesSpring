@@ -2,7 +2,10 @@ package com.baas.backend.model;
 
 
 import jakarta.persistence.*;
+import lombok.Getter;
 import lombok.Setter;
+
+import java.util.Date;
 
 @Entity
 @Table(name = "UserScores")
@@ -17,5 +20,11 @@ public class UserScore {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    private int score;
+    @Setter
+    @Getter
+    private String score;
+
+    @Setter
+    @Getter
+    private Date date;
 }
